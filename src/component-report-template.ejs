@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vue Analyzer - Component Report</title>
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; color: #333; background-color: #f8f9fa; margin: 0; padding: 20px; }
+    h1 { text-align: center; color: #2c3e50; }
+    table { width: 100%; border-collapse: collapse; margin-top: 20px; font-size: 14px; }
+    th, td { border: 1px solid #ddd; padding: 12px; text-align: left; vertical-align: top; }
+    th { background-color: #3498db; color: white; position: sticky; top: 0; }
+    tr:nth-child(even) { background-color: #f2f2f2; }
+    code { background-color: #ecf0f1; padding: 2px 5px; border-radius: 4px; }
+    .props-list { list-style-type: none; padding-left: 0; margin: 0; }
+    .filter-form { background: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); margin-bottom: 20px; display: flex; gap: 20px; align-items: center; }
+    .filter-form input { padding: 10px; border: 1px solid #ddd; border-radius: 4px; width: 100%; }
+    .filter-form .form-group { flex: 1; }
+    .filter-form label { display: block; margin-bottom: 5px; font-weight: bold; color: #34495e; }
+  </style>
+</head>
+<body>
+  <h1>Component Usage Report</h1>
+  <p style="text-align: center; color: #7f8c8d;">Generated on <%= new Date().toLocaleString() %></p>
+
+  <div class="filter-form">
+    <div class="form-group">
+      <label for="compNameFilter">Component Name</label>
+      <input type="text" id="compNameFilter" placeholder="e.g., BSButton">
+    </div>
+    <div class="form-group">
+      <label for="propNameFilter">Prop Name</label>
+      <input type="text" id="propNameFilter" placeholder="e.g., :caption">
+    </div>
+    <div class="form-group">
+      <label for="propValueFilter">Prop Value</label>
+      <input type="text" id="propValueFilter" placeholder="e.g., ecp.save">
+    </div>
+  </div>
+
+  <table id="componentTable">
+    <thead>
+      <tr>
+        <th>File Path</th>
+        <th>Component Name</th>
+        <th>Props</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% flatResults.forEach(item => { %>
+        <tr class="component-row" data-component-name="<%= item.componentName.toLowerCase() %>">
+          <td><code><%= item.filePath %></code></td>
+          <td><code><%= item.componentName %></code></td>
+          <td class="props-cell">
+            <ul class="props-list">
+              <% Object.entries(item.props).forEach(([key, value]) => { %>
+                <li data-prop-name="<%= key.toLowerCase() %>" data-prop-value="<%= String(value).toLowerCase() %>">
+                  <code><%= key %></code>: <code>"<%= value %>"</code>
+                </li>
+              <% }) %>
+            </ul>
+          </td>
+        </tr>
+      <% }) %>
+    </tbody>
+  </table>
+
+<script>
+  const compNameFilter = document.getElementById('compNameFilter');
+  const propNameFilter = document.getElementById('propNameFilter');
+  const propValueFilter = document.getElementById('propValueFilter');
+  const tableRows = document.querySelectorAll('.component-row');
+
+  function filterRows() {
+    const compName = compNameFilter.value.toLowerCase();
+    const propName = propNameFilter.value.toLowerCase();
+    const propValue = propValueFilter.value.toLowerCase();
+
+    tableRows.forEach(row => {
+      const rowCompName = row.dataset.componentName;
+      const propsList = row.querySelectorAll('.props-cell li');
+
+      const compMatch = !compName || rowCompName.includes(compName);
+
+      let propMatch = true;
+      if (propName || propValue) {
+        propMatch = Array.from(propsList).some(li => {
+          const liPropName = li.dataset.propName;
+          const liPropValue = li.dataset.propValue;
+          const nameMatch = !propName || liPropName.includes(propName);
+          const valueMatch = !propValue || liPropValue.includes(propValue);
+          return nameMatch && valueMatch;
+        });
+      }
+
+      if (compMatch && propMatch) {
+        row.style.display = '';
+      } else {
+        row.style.display = 'none';
+      }
+    });
+  }
+
+  compNameFilter.addEventListener('input', filterRows);
+  propNameFilter.addEventListener('input', filterRows);
+  propValueFilter.addEventListener('input', filterRows);
+</script>
+
+</body>
+</html>

@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vue Analyzer - Component Report</title>
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; color: #333; background-color: #f8f9fa; margin: 0; padding: 20px; }
+    h1 { text-align: center; color: #2c3e50; }
+    table { width: 100%; border-collapse: collapse; margin-top: 20px; font-size: 14px; }
+    th, td { border: 1px solid #ddd; padding: 12px; text-align: left; vertical-align: top; }
+    th { background-color: #3498db; color: white; position: sticky; top: 0; }
+    tr:nth-child(even) { background-color: #f2f2f2; }
+    code { background-color: #ecf0f1; padding: 2px 5px; border-radius: 4px; }
+    .props-list { list-style-type: none; padding-left: 0; margin: 0; }
+    .filter-form { background: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); margin-bottom: 20px; display: flex; gap: 20px; align-items: center; }
+    .filter-form input { padding: 10px; border: 1px solid #ddd; border-radius: 4px; width: 100%; }
+    .filter-form .form-group { flex: 1; }
+    .filter-form label { display: block; margin-bottom: 5px; font-weight: bold; color: #34495e; }
+  </style>
+</head>
+<body>
+  <h1>Component Usage Report</h1>
+  <p style="text-align: center; color: #7f8c8d;">Generated on 9/7/2025, 2:40:46 PM</p>
+
+  <div class="filter-form">
+    <div class="form-group">
+      <label for="compNameFilter">Component Name</label>
+      <input type="text" id="compNameFilter" placeholder="e.g., BSButton">
+    </div>
+    <div class="form-group">
+      <label for="propNameFilter">Prop Name</label>
+      <input type="text" id="propNameFilter" placeholder="e.g., :caption">
+    </div>
+    <div class="form-group">
+      <label for="propValueFilter">Prop Value</label>
+      <input type="text" id="propValueFilter" placeholder="e.g., ecp.save">
+    </div>
+  </div>
+
+  <table id="componentTable">
+    <thead>
+      <tr>
+        <th>File Path</th>
+        <th>Component Name</th>
+        <th>Props</th>
+      </tr>
+    </thead>
+    <tbody>
+      
+        <tr class="component-row" data-component-name="bsbutton">
+          <td><code>test-data/BrandDetail.vue</code></td>
+          <td><code>BSButton</code></td>
+          <td class="props-cell">
+            <ul class="props-list">
+              
+                <li data-prop-name=":caption" data-prop-value="{key: &#39;ecp.changehist&#39;}">
+                  <code>:caption</code>: <code>"{key: &#39;ecp.changeHist&#39;}"</code>
+                </li>
+              
+                <li data-prop-name="button-color" data-prop-value="gray">
+                  <code>button-color</code>: <code>"gray"</code>
+                </li>
+              
+                <li data-prop-name="class" data-prop-value="ml-4">
+                  <code>class</code>: <code>"ml-4"</code>
+                </li>
+              
+                <li data-prop-name="data-id" data-prop-value="changehistbtn">
+                  <code>data-id</code>: <code>"changeHistBtn"</code>
+                </li>
+              
+                <li data-prop-name="@click" data-prop-value="changehist">
+                  <code>@click</code>: <code>"changeHist"</code>
+                </li>
+              
+            </ul>
+          </td>
+        </tr>
+      
+        <tr class="component-row" data-component-name="bsbutton">
+          <td><code>test-data/BrandDetail.vue</code></td>
+          <td><code>BSButton</code></td>
+          <td class="props-cell">
+            <ul class="props-list">
+              
+                <li data-prop-name=":caption" data-prop-value="{ key: &#39;ecp.logicallydeleted&#39; }">
+                  <code>:caption</code>: <code>"{ key: &#39;ecp.logicallyDeleted&#39; }"</code>
+                </li>
+              
+                <li data-prop-name=":disabled" data-prop-value="brandstatus?.deleted">
+                  <code>:disabled</code>: <code>"brandStatus?.deleted"</code>
+                </li>
+              
+                <li data-prop-name="button-color" data-prop-value="red">
+                  <code>button-color</code>: <code>"red"</code>
+                </li>
+              
+                <li data-prop-name="class" data-prop-value="ml-4">
+                  <code>class</code>: <code>"ml-4"</code>
+                </li>
+              
+                <li data-prop-name="data-id" data-prop-value="delete">
+                  <code>data-id</code>: <code>"delete"</code>
+                </li>
+              
+                <li data-prop-name="@click" data-prop-value="remove">
+                  <code>@click</code>: <code>"remove"</code>
+                </li>
+              
+            </ul>
+          </td>
+        </tr>
+      
+        <tr class="component-row" data-component-name="bstabsheet">
+          <td><code>test-data/BrandDetail.vue</code></td>
+          <td><code>BSTabSheet</code></td>
+          <td class="props-cell">
+            <ul class="props-list">
+              
+                <li data-prop-name="v-model" data-prop-value="currenttabid">
+                  <code>v-model</code>: <code>"currentTabId"</code>
+                </li>
+              
+                <li data-prop-name=":tabs" data-prop-value="tabs">
+                  <code>:tabs</code>: <code>"tabs"</code>
+                </li>
+              
+                <li data-prop-name="class" data-prop-value="detail-top colored-bg">
+                  <code>class</code>: <code>"detail-top colored-bg"</code>
+                </li>
+              
+            </ul>
+          </td>
+        </tr>
+      
+        <tr class="component-row" data-component-name="branddetailbasic">
+          <td><code>test-data/BrandDetail.vue</code></td>
+          <td><code>BrandDetailBasic</code></td>
+          <td class="props-cell">
+            <ul class="props-list">
+              
+                <li data-prop-name=":brand-code" data-prop-value="brandcode">
+                  <code>:brand-code</code>: <code>"brandCode"</code>
+                </li>
+              
+                <li data-prop-name=":brand-status" data-prop-value="brandstatus">
+                  <code>:brand-status</code>: <code>"brandStatus"</code>
+                </li>
+              
+                <li data-prop-name="tab-id" data-prop-value="basic">
+                  <code>tab-id</code>: <code>"basic"</code>
+                </li>
+              
+                <li data-prop-name="@status-changed" data-prop-value="refreshbrandstatus">
+                  <code>@status-changed</code>: <code>"refreshBrandStatus"</code>
+                </li>
+              
+            </ul>
+          </td>
+        </tr>
+      
+        <tr class="component-row" data-component-name="pagebuildercontenttab">
+          <td><code>test-data/BrandDetail.vue</code></td>
+          <td><code>PageBuilderContentTab</code></td>
+          <td class="props-cell">
+            <ul class="props-list">
+              
+                <li data-prop-name=":area-codes" data-prop-value="authorizedareacodes">
+                  <code>:area-codes</code>: <code>"authorizedAreaCodes"</code>
+                </li>
+              
+                <li data-prop-name=":available-widgets" data-prop-value="availablewidgets">
+                  <code>:available-widgets</code>: <code>"availableWidgets"</code>
+                </li>
+              
+                <li data-prop-name=":locales" data-prop-value="datalocaleservice.getgloballocales()">
+                  <code>:locales</code>: <code>"dataLocaleService.getGlobalLocales()"</code>
+                </li>
+              
+                <li data-prop-name=":resource-id" data-prop-value="brandcode">
+                  <code>:resource-id</code>: <code>"brandCode"</code>
+                </li>
+              
+                <li data-prop-name=":top-bar-left-selector" data-prop-value="`[data-id=${topbarid.left}]`">
+                  <code>:top-bar-left-selector</code>: <code>"`[data-id=${topBarId.left}]`"</code>
+                </li>
+              
+                <li data-prop-name=":top-bar-right-selector" data-prop-value="`[data-id=${topbarid.right}]`">
+                  <code>:top-bar-right-selector</code>: <code>"`[data-id=${topBarId.right}]`"</code>
+                </li>
+              
+                <li data-prop-name="content-scope" data-prop-value="area">
+                  <code>content-scope</code>: <code>"Area"</code>
+                </li>
+              
+                <li data-prop-name="resource-type" data-prop-value="brand">
+                  <code>resource-type</code>: <code>"Brand"</code>
+                </li>
+              
+                <li data-prop-name="tab-id" data-prop-value="content">
+                  <code>tab-id</code>: <code>"content"</code>
+                </li>
+              
+            </ul>
+          </td>
+        </tr>
+      
+        <tr class="component-row" data-component-name="brandseo">
+          <td><code>test-data/BrandDetail.vue</code></td>
+          <td><code>BrandSeo</code></td>
+          <td class="props-cell">
+            <ul class="props-list">
+              
+                <li data-prop-name=":brand-code" data-prop-value="brandcode">
+                  <code>:brand-code</code>: <code>"brandCode"</code>
+                </li>
+              
+                <li data-prop-name=":brand-status" data-prop-value="brandstatus">
+                  <code>:brand-status</code>: <code>"brandStatus"</code>
+                </li>
+              
+                <li data-prop-name="tab-id" data-prop-value="seo">
+                  <code>tab-id</code>: <code>"seo"</code>
+                </li>
+              
+            </ul>
+          </td>
+        </tr>
+      
+        <tr class="component-row" data-component-name="branddetailproduct">
+          <td><code>test-data/BrandDetail.vue</code></td>
+          <td><code>BrandDetailProduct</code></td>
+          <td class="props-cell">
+            <ul class="props-list">
+              
+                <li data-prop-name=":brand-code" data-prop-value="brandcode">
+                  <code>:brand-code</code>: <code>"brandCode"</code>
+                </li>
+              
+                <li data-prop-name="tab-id" data-prop-value="prod">
+                  <code>tab-id</code>: <code>"prod"</code>
+                </li>
+              
+            </ul>
+          </td>
+        </tr>
+      
+    </tbody>
+  </table>
+
+<script>
+  const compNameFilter = document.getElementById('compNameFilter');
+  const propNameFilter = document.getElementById('propNameFilter');
+  const propValueFilter = document.getElementById('propValueFilter');
+  const tableRows = document.querySelectorAll('.component-row');
+
+  function filterRows() {
+    const compName = compNameFilter.value.toLowerCase();
+    const propName = propNameFilter.value.toLowerCase();
+    const propValue = propValueFilter.value.toLowerCase();
+
+    tableRows.forEach(row => {
+      const rowCompName = row.dataset.componentName;
+      const propsList = row.querySelectorAll('.props-cell li');
+
+      const compMatch = !compName || rowCompName.includes(compName);
+
+      let propMatch = true;
+      if (propName || propValue) {
+        propMatch = Array.from(propsList).some(li => {
+          const liPropName = li.dataset.propName;
+          const liPropValue = li.dataset.propValue;
+          const nameMatch = !propName || liPropName.includes(propName);
+          const valueMatch = !propValue || liPropValue.includes(propValue);
+          return nameMatch && valueMatch;
+        });
+      }
+
+      if (compMatch && propMatch) {
+        row.style.display = '';
+      } else {
+        row.style.display = 'none';
+      }
+    });
+  }
+
+  compNameFilter.addEventListener('input', filterRows);
+  propNameFilter.addEventListener('input', filterRows);
+  propValueFilter.addEventListener('input', filterRows);
+</script>
+
+</body>
+</html>
