@@ -1,17 +1,24 @@
 {
-  "name": "vue-analyzer",
-  "version": "1.0.0",
-  "description": "",
+  "name": "@g1cloud/vue-analyzer",
+  "version": "0.1.0",
+  "description": "A CLI tool for analyzing Vue.js source files",
   "main": "dist/index.js",
   "bin": {
     "vue-analyzer": "dist/index.js"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "scripts": {
     "build": "tsc && cp src/*.ejs dist/",
     "start": "node dist/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
+  "keywords": [
+    "vue",
+    "analyzer",
+    "cli"
+  ],
   "author": "",
   "license": "ISC",
   "engines": {
