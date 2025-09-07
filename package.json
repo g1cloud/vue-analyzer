@@ -23,6 +23,9 @@
     "typescript": "^5.9.2"
   },
   "dependencies": {
-    "commander": "^14.0.0"
+    "@vue/compiler-dom": "^3.5.21",
+    "@vue/compiler-sfc": "^3.5.21",
+    "commander": "^14.0.0",
+    "glob": "^11.0.3"
   }
 }
